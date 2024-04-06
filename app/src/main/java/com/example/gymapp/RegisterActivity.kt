@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun register(view: View){
-        val url = "http://192.168.1.138/login_gymApp/insert.php"
+        val url = "http://$ip/login_gymApp/insert.php"
         val queue: RequestQueue = Volley.newRequestQueue(this)
 
         val resultadoPost = object : StringRequest(Request.Method.POST,url,
