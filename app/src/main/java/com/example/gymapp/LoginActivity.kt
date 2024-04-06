@@ -49,14 +49,18 @@ class LoginActivity : AppCompatActivity() {
 
             val resultadoPost = object : StringRequest(Request.Method.POST, urlLogin,
                 Response.Listener<String> { response ->
-                    if (response.equals("ingresaste correctamente")) {
 
+
+                    if (response.equals("no pudiste ingresar")) {
                         Toast.makeText(this, "$response", Toast.LENGTH_LONG).show();
-                        startActivity(Intent(this, Home::class.java));
-
 
                     } else {
-                        Toast.makeText(this, "$response", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, response, Toast.LENGTH_LONG).show();
+
+                        val intent = Intent(this, Home::class.java);
+                        intent.putExtra("nombre",response);
+                        startActivity(intent);
+
                     }
                 }, Response.ErrorListener { error ->
                     Toast.makeText(this, "Error $error", Toast.LENGTH_LONG).show();
