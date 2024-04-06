@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
@@ -16,33 +17,19 @@ import com.android.volley.toolbox.Volley
 class LoginActivity : AppCompatActivity() {
     var txtEmail : EditText? = null
     var txtPass : EditText? = null
-    val urlLogin = "http://192.168.1.138/login_gymApp/login.php"
+    var ip = "localhost"
+    val urlLogin = "http://$ip/login_gymApp/login.php"
+    var textregister : TextView? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         txtEmail = findViewById(R.id.email)
         txtPass = findViewById(R.id.pass)
+        textregister = findViewById(R.id.clicktoregisterview)
     }
 
-    fun register(view: View){
-        val url = "http://192.168.1.138/login_gymApp/insert.php"
-        val queue: RequestQueue = Volley.newRequestQueue(this)
-
-        val resultadoPost = object : StringRequest(Request.Method.POST,url,
-            Response.Listener<String> { response ->
-                Toast.makeText(this, "Usuario insertado existosamente", Toast.LENGTH_LONG).show()}
-            , Response.ErrorListener { error ->
-                Toast.makeText(this, "Error $error", Toast.LENGTH_LONG).show()
-            })
-            {
-                override fun getParams(): MutableMap<String, String>? {
-                    val parametros = HashMap<String,String>()
-                    parametros.put("email", txtEmail?.text.toString())
-                    parametros.put("password", txtPass?.text.toString())
-                    return parametros
-                }
-            }
-            queue.add(resultadoPost)
+    fun goToRegister(view: View){
+        startActivity(Intent(this, RegisterActivity::class.java));
 
     }
 
