@@ -47,41 +47,7 @@
                 android:layout_marginTop="140dp"/>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal"
-                android:background="@color/colorPrimary">
-
-                <ImageView
-
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="110dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginVertical="5dp"
-                    android:src="@drawable/logo"
-
-
-                    />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="GymApp"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    android:textStyle="bold"
-                    tools:ignore="TextSizeCheck"
-
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="20dp"/>
-
-
-
-            </LinearLayout>
+            <include layout="@layout/header"/>
 
 
         </RelativeLayout>
