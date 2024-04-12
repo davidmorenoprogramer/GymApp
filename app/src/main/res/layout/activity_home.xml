@@ -86,7 +86,8 @@
                 android:layout_height="match_parent"
                 android:padding="16dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:onClick="horariosActivity">
 
                 <ImageView
                     android:layout_width="80dp"

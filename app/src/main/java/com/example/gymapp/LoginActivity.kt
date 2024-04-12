@@ -12,6 +12,10 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
+
+
+
 
 
 class LoginActivity : AppCompatActivity() {
@@ -50,15 +54,16 @@ class LoginActivity : AppCompatActivity() {
             val resultadoPost = object : StringRequest(Request.Method.POST, urlLogin,
                 Response.Listener<String> { response ->
 
-
                     if (response.equals("no pudiste ingresar")) {
-                        Toast.makeText(this, "$response", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this, "$response", Toast.LENGTH_LONG).show();
 
                     } else {
-                        Toast.makeText(this, response, Toast.LENGTH_LONG).show();
-
+                       // Toast.makeText(this, response, Toast.LENGTH_LONG).show();
                         val intent = Intent(this, Home::class.java);
-                        intent.putExtra("nombre",response);
+                        val jsonObj: JSONObject = JSONObject(response)
+
+                        intent.putExtra("nombre",jsonObj["name"].toString());
+                        intent.putExtra("id",jsonObj["id"].toString());
                         startActivity(intent);
 
                     }

@@ -6,8 +6,8 @@ class HorarioClass {
 
     var entrada: String? = null;
     var salida: String? = null;
-    var fecha: Date? = null;
-    constructor(entrada:String, salida:String, fecha:Date){
+    var fecha: String? = null;
+    constructor(entrada:String, salida:String, fecha:String){
 
         this.entrada = entrada
         this.salida = salida
