@@ -40,19 +40,13 @@ class Horarios : AppCompatActivity() {
                 //Toast.makeText(this, response, Toast.LENGTH_LONG).show()
                 jsonObj = JSONArray(response)
 
-                //Toast.makeText(this, jsonObj!!.getJSONObject(0).get("idUsuario").toString(), Toast.LENGTH_LONG).show()
-
                for (i in 0 ..jsonObj!!!!.length() - 1){
-                    //val obj = jsonObj!!.getJSONArray(i);
-                    //Toast.makeText(this, obj.toString(), Toast.LENGTH_LONG).show()
 
                   val horario= HorarioClass(jsonObj!!.getJSONObject(i).get("entrada").toString(),jsonObj!!.getJSONObject(i).get("salida").toString(), jsonObj!!.getJSONObject(i).get("dia").toString());
-
                    this.list.add(i,horario)
 
-
                 }
-                //Toast.makeText(this, this.list.toString(), Toast.LENGTH_LONG).show()
+
                adapterhorarios = adapterHorarios(this,this.list);
 
                 listView!!.adapter = adapterhorarios
