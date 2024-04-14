@@ -10,9 +10,40 @@
     >
 
     <include layout="@layout/header"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="85dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/nombremonitortext"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:text="Nombre"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/horariomonitorText"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Horarios libre"
+            />
 
 
 
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/monitoresList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="140dp"/>
 
 
 </RelativeLayout>

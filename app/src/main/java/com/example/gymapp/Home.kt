@@ -29,5 +29,11 @@ class Home : AppCompatActivity() {
         startActivity(intent);
 
     }
+    fun monitoresActivity(view: View){
+        val intent = Intent(this, Monitores::class.java);
+
+        startActivity(intent);
+
+    }
 
 }
