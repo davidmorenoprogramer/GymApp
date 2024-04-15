@@ -36,4 +36,13 @@ class Home : AppCompatActivity() {
 
     }
 
+    fun ClasesActivity(view: View){
+        val intent = Intent(this, Clases::class.java);
+
+        startActivity(intent);
+
+    }
+
+
+
 }
