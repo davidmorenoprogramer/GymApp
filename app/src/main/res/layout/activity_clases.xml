@@ -10,47 +10,17 @@
     android:background="@color/white"
     >
     <include layout="@layout/header"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="85dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/horarioEntradatext"
-            android:layout_weight="1"
-            android:gravity="center"
-
-            android:text="Hora de Entrada"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/horarioSalidaText"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Hora de Salida"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/horarioDiaText"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Fecha"
-            />
-
-
-    </LinearLayout>
 
 
     <ListView
         android:id="@+id/ClasesList"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="140dp"/>
+        android:layout_height="635dp"
+        android:layout_marginTop="90dp"
+        android:dividerHeight="5dp"
+        android:layout_marginHorizontal="3dp"/>
 
 
 

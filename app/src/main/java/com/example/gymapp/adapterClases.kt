@@ -29,6 +29,7 @@ class adapterClases : BaseAdapter {
         return position.toLong()
     }
 
+
     override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View {
         var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater;
         var row = inflater.inflate(R.layout.clases_list,null)

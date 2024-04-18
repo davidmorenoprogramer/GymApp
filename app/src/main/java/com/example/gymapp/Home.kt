@@ -38,7 +38,7 @@ class Home : AppCompatActivity() {
 
     fun ClasesActivity(view: View){
         val intent = Intent(this, Clases::class.java);
-
+        intent.putExtra("id",idUsuario);
         startActivity(intent);
 
     }
