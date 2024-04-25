@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.core.view.isInvisible
 
 
 class adapterClases : BaseAdapter {
@@ -39,6 +40,8 @@ class adapterClases : BaseAdapter {
         var horario = row.findViewById<TextView>(R.id.horarioclase)
         var aforo = row.findViewById<TextView>(R.id.aforo)
         var aforoMaximo = row.findViewById<TextView>(R.id.aforoMaximo)
+        var reservada = row.findViewById<TextView>(R.id.reservado)
+
 
         nombre.text = arrayList[position].nombre
         lugar.text = arrayList[position].lugar
@@ -46,6 +49,12 @@ class adapterClases : BaseAdapter {
         horario.text = arrayList[position].horario
         aforo.text = arrayList[position].aforo
         aforoMaximo.text = arrayList[position].aforoMaximo
+        if (arrayList[position].reservada == true) {
+            reservada.isInvisible = false;
+
+        }
+        else{reservada.isInvisible = true;}
+
         return row
     }
 

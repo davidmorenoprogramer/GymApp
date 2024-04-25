@@ -22,6 +22,13 @@ class Home : AppCompatActivity() {
 
 
     }
+    fun noticiasActivity(view: View){
+        val intent = Intent(this, Noticias::class.java);
+        intent.putExtra("id",idUsuario);
+
+        startActivity(intent);
+
+    }
     fun horariosActivity(view: View){
         val intent = Intent(this, Horarios::class.java);
         intent.putExtra("id",idUsuario);
@@ -31,7 +38,7 @@ class Home : AppCompatActivity() {
     }
     fun monitoresActivity(view: View){
         val intent = Intent(this, Monitores::class.java);
-
+        intent.putExtra("id",idUsuario);
         startActivity(intent);
 
     }

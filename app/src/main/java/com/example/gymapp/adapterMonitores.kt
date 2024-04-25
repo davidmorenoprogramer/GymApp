@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.core.view.isInvisible
 
 
 class adapterMonitores : BaseAdapter {
@@ -34,9 +35,17 @@ class adapterMonitores : BaseAdapter {
         var row = inflater.inflate(R.layout.monitores_list,null)
         var nombre = row.findViewById<TextView>(R.id.nombremonitor)
         var horariolibre = row.findViewById<TextView>(R.id.horariolibremonitor)
+        var reservada = row.findViewById<TextView>(R.id.reservadomonitor)
+
 
         nombre.text = arrayList[position].nombre
         horariolibre.text = arrayList[position].horariolibre
+        //si la id de reserva es == 0 significa que no hay ninguna reserva, si tiene la id de alguien, esta reservada por esa persona.
+        if (arrayList[position].idreserva != 0) {
+            reservada.isInvisible = false;
+
+        }
+        else{reservada.isInvisible = true;}
 
         return row
     }

@@ -38,13 +38,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-
     fun login (view: View){
-
+        //hago un trim para eliminar los caracteres no deseados.
         val email = txtEmail?.text.toString().trim();
         val pass = txtPass?.text.toString().trim();
         val queue: RequestQueue = Volley.newRequestQueue(this)
 
+        ///si la contraseña o el email estan vacios muestra un error.
         if (pass.isEmpty() || email.isEmpty()){
             Toast.makeText(this, "Algunos campos están vacíos", Toast.LENGTH_LONG).show()};
 
@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                        // Toast.makeText(this, response, Toast.LENGTH_LONG).show();
                         val intent = Intent(this, Home::class.java);
                         val jsonObj: JSONObject = JSONObject(response)
-
+                        ///hago un intent al menu activity para que pueda saber el nombre y la id del usuario.
                         intent.putExtra("nombre",jsonObj["name"].toString());
                         intent.putExtra("id",jsonObj["id"].toString());
                         startActivity(intent);

@@ -1,9 +1,9 @@
 package com.example.gymapp
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -11,51 +11,46 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 
-
-class Horarios : AppCompatActivity() {
-
+class Noticias : AppCompatActivity() {
     var listView : ListView? = null
-    private val list: MutableList<HorarioClass> = ArrayList()
+    private val list: MutableList<NoticiasClass> = ArrayList()
     //var list : ArrayList<HorarioClass>? = null
-    var adapterhorarios : adapterHorarios? = null
+    var adapterNoticias : adapterNoticias? = null
     var idUsuario: String? = "0";
     var ip = "localhost"
-    val urlHorarios = "http://$ip/login_gymApp/GetHorarios.php"
+    val urlnoticias = "http://$ip/login_gymApp/GetNoticias.php"
     var jsonObj: JSONArray? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_horarios)
+        setContentView(R.layout.activity_noticias)
         var id = intent.extras!!.getString("id")
-        listView = findViewById(R.id.horariosList)
-
+        listView = findViewById(R.id.noticiasList)
         this.idUsuario = id
-        getHorarios()
+        getnoticias()
     }
-
-    fun getHorarios(){
-        //Toma una lista de los horarios.
+    fun getnoticias(){
+        //Toma una lista de las noticias.
 
         val queue: RequestQueue = Volley.newRequestQueue(this)
-        val resultadoPost = object : StringRequest(Request.Method.POST, urlHorarios,
+        val resultadoPost = object : StringRequest(Request.Method.POST, urlnoticias,
             Response.Listener<String> { response ->
                 //Toast.makeText(this, response, Toast.LENGTH_LONG).show()
-                jsonObj = JSONArray(response) //lo transformo en json para poder inflarlo en un adapter de horarios.
+                jsonObj = JSONArray(response) //lo transformo en json para poder inflarlo en un adapter de noticias.
 
-               for (i in 0 ..jsonObj!!!!.length() - 1){ //menos 1 por que el id en la base de datos empieza por uno y los array en 0
+                for (i in 0 ..jsonObj!!!!.length() - 1){ //menos 1 por que el id en la base de datos empieza por uno y los array en 0
 
-                  val horario= HorarioClass(jsonObj!!.getJSONObject(i).get("entrada").toString(),jsonObj!!.getJSONObject(i).get("salida").toString(), jsonObj!!.getJSONObject(i).get("dia").toString());
-                   this.list.add(i,horario)
+                    val noticia= NoticiasClass(jsonObj!!.getJSONObject(i).get("noticia").toString());
+                    this.list.add(i,noticia)
 
-                   //creo cada clase y lo añado un Array de la clase horarios.
+                    //creo cada clase y lo añado un Array de la clase noticias.
                 }
 
                 //inflo el adapter
-               adapterhorarios = adapterHorarios(this,this.list);
+                adapterNoticias = adapterNoticias(this,this.list);
                 //lo añado a la vista.
-                listView!!.adapter = adapterhorarios
+                listView!!.adapter = adapterNoticias
 
-                                      }
+            }
             , Response.ErrorListener { error ->
                 Toast.makeText(this, "Error $error", Toast.LENGTH_LONG).show();
             }) {
@@ -69,5 +64,4 @@ class Horarios : AppCompatActivity() {
         }
         queue.add(resultadoPost);
     }
-
 }

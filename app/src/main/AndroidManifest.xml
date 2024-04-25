@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Noticias"
+            android:exported="false" />
+        <activity
             android:name=".ClasesReservadas"
             android:exported="false" />
         <activity

@@ -8,8 +8,9 @@ class ClasesClass {
     var horario: String? = null;
     var aforo: String? = null;
     var aforoMaximo: String? = null;
+    var reservada: Boolean? = false;
 
-    constructor(nombre:String, lugar:String, monitor:String, horario:String, aforo:String, aforoMaximo:String){
+    constructor(nombre:String, lugar:String, monitor:String, horario:String, aforo:String, aforoMaximo:String, reservada:Boolean){
 
         this.nombre = nombre
         this.lugar = lugar
@@ -17,6 +18,7 @@ class ClasesClass {
         this.horario = horario
         this.aforo = aforo
         this.aforoMaximo = aforoMaximo
+        this.reservada = reservada
     }
 
 }
