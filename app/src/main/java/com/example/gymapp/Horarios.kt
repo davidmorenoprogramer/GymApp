@@ -20,7 +20,7 @@ class Horarios : AppCompatActivity() {
     var adapterhorarios : adapterHorarios? = null
     var idUsuario: String? = "0";
     var ip = "localhost"
-    val urlHorarios = "http://$ip/login_gymApp/GetHorarios.php"
+    val urlHorarios = "http://$ip/gymApp/GetHorarios.php"
     var jsonObj: JSONArray? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

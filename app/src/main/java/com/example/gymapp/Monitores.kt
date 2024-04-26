@@ -21,9 +21,9 @@ class Monitores : AppCompatActivity() {
     var adaptermonitores : adapterMonitores? = null
     var ip = "localhost"
     var idUsuario: String? = "0";
-    val urlMonitores = "http://$ip/login_gymApp/GetMonitores.php"
-    val urlSetReserva = "http://$ip/login_gymApp/SetReservaMonitor.php"
-    val urlCancel = "http://$ip/login_gymApp/CancelReservaMonitor.php"
+    val urlMonitores = "http://$ip/gymApp/GetMonitores.php"
+    val urlSetReserva = "http://$ip/gymApp/SetReservaMonitor.php"
+    val urlCancel = "http://$ip/gymApp/CancelReservaMonitor.php"
     var jsonObj: JSONArray? = null
 
     //este apartado tiene el mismo funcionamiento que las clases.

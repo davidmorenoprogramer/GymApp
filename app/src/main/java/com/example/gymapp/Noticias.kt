@@ -18,7 +18,7 @@ class Noticias : AppCompatActivity() {
     var adapterNoticias : adapterNoticias? = null
     var idUsuario: String? = "0";
     var ip = "localhost"
-    val urlnoticias = "http://$ip/login_gymApp/GetNoticias.php"
+    val urlnoticias = "http://$ip/gymApp/GetNoticias.php"
     var jsonObj: JSONArray? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

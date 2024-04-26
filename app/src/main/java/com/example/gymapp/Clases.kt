@@ -27,10 +27,10 @@ class Clases : AppCompatActivity() {
 
     var adapterclases : adapterClases? = null
     var ip = "localhost"
-    val urlMonitores = "http://$ip/login_gymApp/GetClases.php"
-    val urlSetReserva = "http://$ip/login_gymApp/SetReserva.php"
-    val urlclasesUsuario = "http://$ip/login_gymApp/GetClasesUsuario.php"
-    val urlCancel = "http://$ip/login_gymApp/Cancelreserva.php"
+    val urlMonitores = "http://$ip/gymApp/GetClases.php"
+    val urlSetReserva = "http://$ip/gymApp/SetReserva.php"
+    val urlclasesUsuario = "http://$ip/gymApp/GetClasesUsuario.php"
+    val urlCancel = "http://$ip/gymApp/Cancelreserva.php"
     var jsonObj: JSONArray? = null
 
 

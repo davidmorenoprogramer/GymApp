@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
     var txtName : EditText? = null
     var ip = "localhost"
 
-    val urlLogin = "http://$ip/login_gymApp/login.php"
+    val urlLogin = "http://$ip/gymApp/login.php"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun register(view: View){
-        val url = "http://$ip/login_gymApp/insert.php"
+        val url = "http://$ip/gymApp/insert.php"
         val queue: RequestQueue = Volley.newRequestQueue(this)
 
         val resultadoPost = object : StringRequest(Request.Method.POST,url,

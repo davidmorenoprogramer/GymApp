@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
     var txtEmail : EditText? = null
     var txtPass : EditText? = null
     var ip = "localhost"
-    val urlLogin = "http://$ip/login_gymApp/login.php"
+    val urlLogin = "http://$ip/gymApp/login.php"
     var textregister : TextView? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
